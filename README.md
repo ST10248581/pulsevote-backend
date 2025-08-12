@@ -1,2 +1,14 @@
-# pulsevote-backend
-Backend for PulseVote: a secure, real-time polling web application built with Node.js, Express, and MongoDB. This repository contains the server-side code, API endpoints, and security middleware for handling polling data, enforcing rate limits, and managing database interactions. Follows professional coding practices with .env configuration, dependency auditing, and a modular structure for models, routes, controllers, and middleware.
+# PulseVote Backend
+
+Backend service for **PulseVote**: a secure, real-time polling web application built with **Node.js**, **Express**, and **MongoDB**.  
+Implements security best practices and a modular structure to support scalable, maintainable full-stack development.
+
+## Features
+- REST API built with Express
+- MongoDB connection via Mongoose
+- Security middleware (`helmet`, `cors`, `express-rate-limit`)
+- JSON endpoint at `/test` for frontend integration
+- Environment-based configuration with `.env`
+- MVC-style project structure (`models/`, `routes/`, `controllers/`, `middleware/`)
+
+
