@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
+const authRoutes = require("./routes/authRoutes");
+const { protect } = require("./middleware/authMiddleware");
 
 dotenv.config();
 
@@ -16,3 +18,14 @@ app.get('/', (req, res) => {
 });
 
 module.exports = app;
+
+app.use("/api/auth", authRoutes);
+
+app.get("/api/protected", protect, (req, res) => {
+    res.json({
+        message: `Welcome, user ${req.user.id}! You have accessed protected data.`,
+        timestamp: new Date()
+    });
+});
+
+
